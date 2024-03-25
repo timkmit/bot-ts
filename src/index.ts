@@ -18,22 +18,22 @@ const msgData = (msg: TelegramBot.Message) => {
 const token = process.env.BOT_TOKEN
 
 if(!token){
-    throw new Error('BOT_TOKEN not found')
+    throw new Error('BOT_TOKEN .env not found')
 }
 
 const bot = new TelegramBot(token, {polling: true})
 
-bot.onText(/\/echo (.+)/, (msg, match)=> {
-
-    const chatId = msg.chat.id
-    if (match !== null) {
-        const resp = match[1];
-        bot.sendMessage(chatId, resp);
-    } else {
-        
-        bot.sendMessage(chatId, "No match found.");
-    }
-})
+//bot.onText(/\/echo (.+)/, (msg, match)=> {
+//
+//    const chatId = msg.chat.id
+//    if (match !== null) {
+//        const resp = match[1];
+//        bot.sendMessage(chatId, resp);
+//    } else {
+//        
+//        bot.sendMessage(chatId, "No match found.");
+//    }
+//})
 
 bot.on('message', async (msg) => {
     const {telegramId, name} = msgData(msg)
