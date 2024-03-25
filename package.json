@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@prisma/client": "^5.11.0",
     "@types/node": "^20.11.30",
     "dotenv": "^16.4.5",
     "ts-node": "^10.9.2",
@@ -16,5 +17,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "prisma": "^5.11.0"
+  }
 }
