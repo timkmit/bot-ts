@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ES2023",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "module": "commonJS",
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "removeComments": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+    }
+}
