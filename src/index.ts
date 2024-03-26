@@ -23,17 +23,16 @@ if(!token){
 
 const bot = new TelegramBot(token, {polling: true})
 
-//bot.onText(/\/echo (.+)/, (msg, match)=> {
-//
-//    const chatId = msg.chat.id
-//    if (match !== null) {
-//        const resp = match[1];
-//        bot.sendMessage(chatId, resp);
-//    } else {
-//        
-//        bot.sendMessage(chatId, "No match found.");
-//    }
-//})
+bot.onText(/\/tstim (.+)/, async (msg, match)=> {
+
+    const {telegramId, text, name, sendMessage} = msgData(msg)
+
+    //const chatId = msg.chat.id
+    if (match && telegramId) {
+        const weight = parseFloat(match[1]);
+        await controller.saveWeight(telegramId, name, new Date(2024, 3, 26), weight, sendMessage)
+    }
+})
 
 bot.on('message', async (msg) => {
     const {telegramId, name} = msgData(msg)
